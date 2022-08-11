@@ -26,6 +26,7 @@ tinyvec = { version = "1.6.0", features = ["alloc"] }
 dyn-fmt = "0.3.0"
 log = "0.4.17"
 backtrace = "0.3"
+tracy-client = { version = "0.14.0", features = [], default-features = false }
 
 [dev-dependencies]
 assert_matches = "1.5.0"
@@ -36,6 +37,7 @@ log = "0.4.17"
 [features]
 vm = ["wasmi", "parity-wasm", "soroban-env-common/vm"]
 serde = ["soroban-env-common/serde"]
+tracy = ["tracy-client/enable"]
 testutils = []
 
 [target.'cfg(target_os = "linux")'.dev-dependencies]

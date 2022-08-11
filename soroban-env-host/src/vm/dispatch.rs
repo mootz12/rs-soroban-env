@@ -120,6 +120,7 @@ macro_rules! generate_dispatch_functions {
                 pub(crate) fn $fn_id(host: &mut Host, _vmargs: RuntimeArgs) ->
                     Result<RuntimeValue, wasmi::Trap>
                 {
+                    let _span = tracy_client::span!(stringify!($fn_id));
                     Ok(dispatch_function_helper!{host, _vmargs, fn $fn_id $args }?.into())
                 }
             )*
